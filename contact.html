@@ -30,24 +30,36 @@
       </div>
     </nav>
     <h3>Contact</h3>
-    <form class="information">
+    <form class="information" id="contactform">
+      <div id="feildWarning"></div>
       <div>
         <label for="name">My Name:</label>
-        <input type="text" id="name" name="name" /><span class="star">*</span>
+        <input type="text" id="name" name="name" /><span class="star">*</span
+        ><span id="nameWarning"></span>
       </div>
       <div>
         <label for="gender">Gender:</label>
-        <input type="radio" id="male" name="gender" value="male"
-        onclick=windows.alert('hello sir,')/>
-        <label for="email">Male</label>
-        <input type="radio" id="female" name="gender" value="female" />
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          value="male"
+          onclick="maleButton()"
+        />
+        <span class="maleclass">Male</span>
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+          onclick="femaleButton()"
+        />
         <label for="email">Female</label>
       </div>
       <div>
         <label for="email">My Email Address:</label>
-        <input type="email" id="email" name="email" /><span class="star"
-          >*</span
-        >
+        <input type="email" id="email" name="email" /><span class="star">*</span
+        ><span id="emailWarning"></span>
       </div>
       <div>
         <label for="phoneNo">My Telephone Number:</label>
@@ -55,7 +67,10 @@
       </div>
       <div>
         <label for="organizationName">My Organization Name: </label>
-        <input type="text" id="organizationName" name="organizationName" />
+        <input type="text" id="organizationName" name="organizationName" /><span
+          class="star"
+          >*</span
+        ><span id="organizationNameWarning"></span>
       </div>
       <div>
         <label for="city">My City:</label>
@@ -63,11 +78,12 @@
       </div>
       <div>
         <label for="state">My State or Province:</label>
-        <select>
-          <option value="ap">Andhra Pradesh</option>
-          <option value="kar">Karnataka</option>
-          <option value="tn">Tamil Nadu</option>
-          <option value="ts">Telangana</option>
+        <select id="state" name="state" onclick="statePromo()">
+          <option></option>
+          <option>Andhra Pradesh</option>
+          <option>Karnataka</option>
+          <option>Tamil Nadu</option>
+          <option>Telangana</option>
         </select>
       </div>
       <div>
@@ -115,8 +131,8 @@
           columns="80"
         ></textarea>
       </div>
-      <input type="button" value="Send Message" />
-      <input type="button" value="Clear Form" />
+      <input type="button" value="Send Message" onclick="validateForm()" />
+      <input type="button" value="Clear Form" onclick="clearForm()" />
     </form>
   </body>
 </html>
